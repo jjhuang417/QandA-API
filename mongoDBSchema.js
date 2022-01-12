@@ -1,21 +1,23 @@
-const mongoDBSchema = mongoose.Schema(
-  id: "number",
-  question_id: "number",
-  question_body: "string",
-  question_date: "Date",
-  asker_name: "string",
-  question_helpfulness: "number",
-  reported: "boolean",
+const mongoose = require('mongoose');
+
+const QandA = new mongoose.Schema ({
+  id: Number,
+  question_id: Number,
+  question_body: String,
+  question_date: Date,
+  asker_name: String,
+  question_helpfulness: Number,
+  reported: Boolean,
   answers: [{
-    answer_id: "number",
-    body: "string",
-    date: "string",
-    answerer_name: "string",
-    helpfulness: "number",
-    reported: "boolean"
+    answer_id: Number,
+    body: String,
+    date: String,
+    answerer_name: String,
+    helpfulness: Number,
+    reported: Boolean
     photos: [{
-      photo_id: "number",
-      photo: "string"
+      photo_id: Number,
+      photo: String
     }]
   },...]
-)
+});
