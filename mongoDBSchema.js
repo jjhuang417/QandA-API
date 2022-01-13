@@ -8,16 +8,18 @@ const QandA = new mongoose.Schema ({
   asker_name: String,
   question_helpfulness: Number,
   reported: Boolean,
-  answers: [{
-    answer_id: Number,
-    body: String,
-    date: String,
-    answerer_name: String,
-    helpfulness: Number,
-    reported: Boolean
-    photos: [{
-      photo_id: Number,
-      photo: String
-    }]
-  },...]
+  answers: [Number]
+});
+
+const Answer = new mongoose.Schema ({
+  answer_id: Number,
+  body: String,
+  date: String,
+  answerer_name: String,
+  helpfulness: Number,
+  reported: Boolean
+  photos: [{
+    photo_id: Number,
+    photo: String
+  }]
 });

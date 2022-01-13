@@ -1,0 +1,27 @@
+{
+  "name": "QandA-API",
+  "version": "1.0.0",
+  "description": "",
+  "main": "mongoDBSchema.js",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "express.js": "^1.0.0",
+    "nodemon": "^2.0.15"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Magnificent-Macademia/QandA-API.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Magnificent-Macademia/QandA-API/issues"
+  },
+  "homepage": "https://github.com/Magnificent-Macademia/QandA-API#readme"
+}
