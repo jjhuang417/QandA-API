@@ -13,9 +13,18 @@ Transform: turn the data into digestable roles and columns
 */
 
 \COPY questions FROM '/Users/Soft/work/QandA-API/data/questions.csv' DELIMITER ',' CSV HEADER;
+
 alter table questions alter column question_date set data type timestamp with time zone using to_timestamp(question_date/1000);
 
 \COPY answers FROM '/Users/Soft/work/QandA-API/data/answers.csv' DELIMITER ',' CSV HEADER;
+
 alter table answers alter column answer_date set data type timestamp with time zone using to_timestamp(answer_date/1000);
 
 \COPY photos FROM '/Users/Soft/work/QandA-API/data/answers_photos.csv' DELIMITER ',' CSV HEADER;
+
+/*Use the below to reset the out of sync primary key sequence for each table*/
+SELECT setval(pg_get_serial_sequence('questions', 'id'), coalesce(max(id), 0)+1 , false) FROM questions;
+
+SELECT setval(pg_get_serial_sequence('answers', 'id'), coalesce(max(id), 0)+1 , false) FROM answers;
+
+SELECT setval(pg_get_serial_sequence('photos', 'id'), coalesce(max(id), 0)+1 , false) FROM photos;

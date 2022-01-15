@@ -6,7 +6,8 @@
   "dependencies": {
     "axios": "^0.24.0",
     "express.js": "^1.0.0",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "pg": "^8.7.1"
   },
   "devDependencies": {},
   "scripts": {
