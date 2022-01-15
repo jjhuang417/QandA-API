@@ -14,9 +14,11 @@ WHERE question_id = 1;
 INSERT INTO questions (question_body, asker_name,  asker_email, product_id)
 VALUES ('Can I eat this product?', 'Jesse H.',  'jjhuang417@gmail.com', 1);
 
-
 /*Adding new answers (takes in an object from client) - POST /qa/questions/:question_id/answers*/
-
+-- INSERT INTO answers (body, answerer_name, answerer_email)
+-- VALUES ('Answer does not exist!', 'Jesse H.', 'jjhuang417@gmail.com');
+-- INSERT INTO photos (url)
+-- VALUES ('google.com');
 
 /*Mark questions as helpful (takes in a quetion ID) - PUT /qa/questions/:question_id/helpful*/
 UPDATE questions
@@ -38,3 +40,15 @@ WHERE id = 1
 UPDATE answers
 SET reported = true
 WHERE id = 1
+
+
+/*Query Optimization - Indexing*/
+
+/*Indexing for questions table on question_id*/
+CREATE INDEX ON questions (product_id);
+
+/*Indexing for questions table on question_id*/
+CREATE INDEX ON answers (question_id);
+
+/*Indexing for questions table on question_id*/
+CREATE INDEX ON photos (answer_id);
