@@ -20,5 +20,14 @@ module.exports = {
       .catch((error) => {
         console.log(error);
       })
+  },
+  updateHelpfulness: (req, res) => {
+    model.updateHelpfulness(req.body.question_id)
+      .then(() => {
+        res.status(201).send('Updated helpfulness.');
+      })
+      .catch((error) => {
+        console.log(error);
+      })
   }
 }
