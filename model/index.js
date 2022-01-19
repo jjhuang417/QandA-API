@@ -4,7 +4,6 @@ const db = require('../database/indexPool.js');
 
 module.exports = {
   getProductQuestions: (product_id) => {
-    console.log(product_id);
     let querySQL =
     `SELECT product_id, json_agg(
       json_build_object(

@@ -9,5 +9,4 @@ router.get('/questions', controller.getProductQuestions);
 router.post('/questions', controller.postNewQuestion);
 router.put('/questions/helpful', controller.updateHelpfulness);
 
-
 module.exports = router;

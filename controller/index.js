@@ -1,5 +1,6 @@
 const express = require('express');
 const model = require('../model/index.js');
+const server = require('../server/index.js');
 
 module.exports = {
   getProductQuestions: (req, res) => {
