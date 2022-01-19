@@ -2,18 +2,18 @@ import http from 'k6/http';
 import { sleep, check } from 'k6';
 export const options = {
   vus: 100,
-  duration: '60s',
+  duration: '15s',
 };
 
 
 export default function () {
-  let randomID = Math.floor(Math.random() * (300000));
+  let randomID = Math.floor(Math.random() * (1000000));
   let requestParam = {
     params: {
    "product_id": randomID
   }
 }
-  let res = http.get('http://localhost:3000/qa/questions', requestParam);
+  let res = http.get(`http://localhost:3000/qa/questions`, requestParam);
   sleep(1);
   check(res, {
     'is status 200': r => r.status === 200,

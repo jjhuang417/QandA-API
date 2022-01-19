@@ -5,6 +5,7 @@
   "main": "mongoDBSchema.js",
   "dependencies": {
     "axios": "^0.24.0",
+    "dotenv": "^14.2.0",
     "express.js": "^1.0.0",
     "k6": "0.0.0",
     "newrelic": "^8.7.1",
